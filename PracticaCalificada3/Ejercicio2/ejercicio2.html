@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Equipos Aleatorios</title>
+    <link href="styles2.css" rel="stylesheet" >
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Equipos Aleatorios</h1>
+        <div id="inputSection" class="input-section">
+            <h2>1. Ingresa los participantes</h2>
+            <p><em>Cada participante debe estar en una nueva línea</em></p>
+            <p class="note">Agrega un * al inicio para indicar líderes de grupo. Ejemplo: *Líder</p>
+            <textarea id="participants" placeholder="Juan Pérez&#10;*María González&#10;Carlos López&#10;..."></textarea>
+            
+            <h2>2. Cómo dividir:</h2>
+            <div class="options">
+                <div>
+                    <label for="splitType">Método de división:</label><br>
+                    <select id="splitType">
+                        <option value="teams">Cantidad de equipos</option>
+                        <option value="members">Participantes por equipo</option>
+                    </select>
+                </div>
+                <div id="teamsOption">
+                    <label for="teamCount">Número de equipos:</label><br>
+                    <select id="teamCount">
+                        <option value="2">2 equipos</option>
+                        <option value="3">3 equipos</option>
+                        <option value="4">4 equipos</option>
+                        <option value="5">5 equipos</option>
+                    </select>
+                </div>
+                <div id="membersOption" class="hidden">
+                    <label for="membersPerTeam">Participantes por equipo:</label><br>
+                    <select id="membersPerTeam">
+                        <option value="2">2 participantes</option>
+                        <option value="3">3 participantes</option>
+                        <option value="4">4 participantes</option>
+                        <option value="5">5 participantes</option>
+                    </select>
+                </div>
+            </div>
+            
+            <h2>3. Título del torneo</h2>
+            <input type="text" id="tournamentTitle" placeholder="Ej: Copa del Mundo Qatar 2022" style="width: 100%;">
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <button id="clearBtn">Limpiar</button>
+                <button id="generateBtn">Generar equipos</button>
+            </div>
+        </div>
+        
+        <div id="outputSection" class="output-section hidden">
+            <h2 id="resultsTitle"></h2>
+            <div id="teamsContainer" class="team-container"></div>
+            
+            <div class="action-buttons">
+                <button id="downloadBtn">Descargar como JPG</button>
+                <button id="copyTeamsBtn">Copiar equipos al portapapeles</button>
+                <button id="copyColumnsBtn">Copiar en columnas</button>
+                <button id="backBtn">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script2.js"> </script>
+</body>
+</html>

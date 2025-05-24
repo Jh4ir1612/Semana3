@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tailwind</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-rocket text-primary-600 text-xl mr-2"></i>
+                        <span class="text-xl font-bold text-primary-600">WebTailwind</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-primary-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Inicio
+                        </a>
+                        <a href="#features" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Características
+                        </a>
+                        <a href="#pricing" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Precios
+                        </a>
+                        <a href="#team" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Equipo
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                        Iniciar Sesión
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" class="bg-primary-50 border-primary-500 text-primary-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Inicio
+                </a>
+                <a href="#features" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Características
+                </a>
+                <a href="#pricing" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Precios
+                </a>
+                <a href="#team" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
+                    Equipo
+                </a>
+                <div class="pt-4 pb-3 border-t border-gray-200">
+                    <div class="mt-3 space-y-1">
+                        <button class="w-full text-left bg-primary-600 hover:bg-primary-700 text-white block px-4 py-2 rounded-md text-base font-medium">
+                            Iniciar Sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block">Construye algo</span>
+                            <span class="block text-primary-600">increíble hoy</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Tailwind CSS es un framework de utilidades primero para construir rápidamente interfaces de usuario modernas sin salir de tu HTML.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 md:py-4 md:text-lg md:px-10">
+                                    Comenzar
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200 md:py-4 md:text-lg md:px-10">
+                                    Ver demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Características</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Una mejor manera de construir interfaces
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Tailwind CSS es altamente personalizable y te permite construir diseños únicos sin salir de tu HTML.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Rápido desarrollo</p>
+                        <p class="mt-2 ml-16 text-base text-gray-500">
+                            Construye rápidamente interfaces modernas sin salir de tu HTML. El enfoque de utilidades primero de Tailwind acelera el desarrollo.
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Fácil personalización</p>
+                        <p class="mt-2 ml-16 text-base text-gray-500">
+                            Tailwind está construido para ser personalizado. Ajusta los colores, espaciados, tipografía y más en el archivo de configuración.
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Responsivo por defecto</p>
+                        <p class="mt-2 ml-16 text-base text-gray-500">
+                            Todas las utilidades de Tailwind vienen con variantes responsivas, haciendo que construir interfaces móviles sea pan comido.
+                        </p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Diseño consistente</p>
+                        <p class="mt-2 ml-16 text-base text-gray-500">
+                            Las limitaciones de un sistema de diseño bien definido en realidad te dan más libertad y hacen que tu diseño sea más consistente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="sm:flex sm:flex-col sm:align-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 text-center">Planes de precios</h2>
+                <p class="mt-5 text-xl text-gray-500 text-center max-w-2xl mx-auto">
+                    Elige el plan que mejor se adapte a tus necesidades. Todos los planes incluyen un período de prueba de 30 días.
+                </p>
+                <div class="relative mt-6 bg-gray-100 rounded-lg p-0.5 flex self-center">
+                    <button type="button" class="relative bg-white border-gray-200 rounded-md shadow-sm py-2 px-4 inline-flex items-center text-sm font-medium text-gray-900 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary-500 focus:z-10 sm:w-auto sm:px-8">
+                        Mensual
+                    </button>
+                    <button type="button" class="ml-0.5 relative border border-transparent rounded-md py-2 px-4 inline-flex items-center text-sm font-medium text-gray-700 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary-500 focus:z-10 sm:w-auto sm:px-8">
+                        Anual
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0">
+                <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                    <div class="p-6">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">Básico</h3>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Todo lo necesario para comenzar.
+                        </p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-extrabold text-gray-900">$19</span>
+                            <span class="text-base font-medium text-gray-500">/mes</span>
+                        </p>
+                        <button class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium text-white bg-primary-600 hover:bg-primary-700">
+                            Comprar plan
+                        </button>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">Qué está incluido</h4>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">5 productos</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Hasta 10,000 visitas/mes</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Soporte básico</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                    <div class="p-6">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">Estándar</h3>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Para negocios en crecimiento.
+                        </p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-extrabold text-gray-900">$49</span>
+                            <span class="text-base font-medium text-gray-500">/mes</span>
+                        </p>
+                        <button class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium text-white bg-primary-600 hover:bg-primary-700">
+                            Comprar plan
+                        </button>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">Qué está incluido</h4>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">25 productos</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Hasta 100,000 visitas/mes</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Soporte prioritario</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">API de integración</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                    <div class="p-6">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">Premium</h3>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Para empresas con necesidades avanzadas.
+                        </p>
+                        <p class="mt-8">
+                            <span class="text-4xl font-extrabold text-gray-900">$99</span>
+                            <span class="text-base font-medium text-gray-500">/mes</span>
+                        </p>
+                        <button class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium text-white bg-primary-600 hover:bg-primary-700">
+                            Comprar plan
+                        </button>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h4 class="text-xs font-medium text-gray-900 tracking-wide uppercase">Qué está incluido</h4>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Productos ilimitados</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Visitas ilimitadas</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Soporte 24/7</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">API avanzada</span>
+                            </li>
+                            <li class="flex space-x-3">
+                                <i class="fas fa-check text-green-500"></i>
+                                <span class="text-sm text-gray-500">Reportes analíticos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div id="team" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Equipo</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Conoce a nuestro equipo
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Un grupo apasionado de diseñadores y desarrolladores trabajando para construir el mejor producto para ti.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12">
+                    <div class="group relative">
+                        <div class="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+                            <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80" alt="" class="w-full h-full object-center object-cover">
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-gray-900">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Michael Foster
+                            </a>
+                        </h3>
+                        <p class="text-base text-gray-500">CEO & Fundador</p>
+                        <div class="mt-4 flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div class="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80" alt="" class="w-full h-full object-center object-cover">
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-gray-900">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Lindsay Walton
+                            </a>
+                        </h3>
+                        <p class="text-base text-gray-500">Diseñadora Principal</p>
+                        <div class="mt-4 flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="group relative">
+                        <div class="relative w-full h-80 rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80" alt="" class="w-full h-full object-center object-cover">
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-gray-900">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Tom Cook
+                            </a>
+                        </h3>
+                        <p class="text-base text-gray-500">Desarrollador Senior</p>
+                        <div class="mt-4 flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gray-500">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Display Section -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-primary-600 font-semibold tracking-wide uppercase">Estadísticas</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Nuestro impacto en números
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-primary-500 rounded-md p-3">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Clientes satisfechos
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        8,000+
+                                    </div>
+                                </dd>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-primary-500 rounded-md p-3">
+                                <i class="fas fa-globe text-white text-xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Países alcanzados
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        25+
+                                    </div>
+                                </dd>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-primary-500 rounded-md p-3">
+                                <i class="fas fa-project-diagram text-white text-xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Proyectos completados
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        1,200+
+                                    </div>
+                                </dd>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-primary-500 rounded-md p-3">
+                                <i class="fas fa-code-branch text-white text-xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dt class="text-sm font-medium text-gray-500 truncate">
+                                    Líneas de código
+                                </dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900">
+                                        5M+
+                                    </div>
+                                </dd>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900">Contacta con nosotros</h2>
+                <p class="mt-4 text-lg text-gray-500">
+                    ¿Tienes alguna pregunta? Estaremos encantados de ayudarte.
+                </p>
+            </div>
+            <div class="mt-12">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+                        <div class="mt-1">
+                            <input id="name" name="name" type="text" required class="py-3 px-4 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <div class="mt-1">
+                            <input id="email" name="email" type="email" required class="py-3 px-4 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                        <div class="mt-1">
+                            <input id="phone" name="phone" type="tel" class="py-3 px-4 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                        <div class="mt-1">
+                            <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500"></textarea>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                            Enviar mensaje
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <div class="flex items-center">
+                        <i class="fas fa-rocket text-primary-400 text-xl mr-2"></i>
+                        <span class="text-xl font-bold text-white">WebTailwind</span>
+                    </div>
+                    <p class="text-gray-300 text-base">
+                        Construyendo el futuro del diseño web con herramientas modernas y enfoques innovadores.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">
+                                Soluciones
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Marketing
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Análisis
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Comercio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Insights
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">
+                                Soporte
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Precios
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Documentación
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Guías
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        API Status
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">
+                                Compañía
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Nosotros
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Trabajos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Prensa
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">
+                                Legal
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Privacidad
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Términos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-400 hover:text-white">
+                                        Cookies
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2023 WebTailwind. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('button[aria-controls="mobile-menu"]');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Cambiar navbar al hacer scroll
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 10) {
+                    nav.classList.add('shadow-lg');
+                    nav.classList.add('bg-gray-900');
+                } else {
+                    nav.classList.remove('shadow-lg');
+                    nav.classList.remove('bg-gray-900');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
