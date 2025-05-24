@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta de Aula Virtual</title>
+  <link href="style1.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Ruleta de Aula Virtual</h1>
+  <div id="respuesta">RESPUESTA</div>
+  <div id="contenedor">
+    <canvas id="ruleta" width="400" height="400"></canvas>
+    <div id="controles">
+      <textarea id="texto-elementos" placeholder="Ingresa los elementos, uno por línea..."></textarea>
+      <br>
+      <button id="btn-iniciar">Iniciar</button>
+      <button id="btn-reiniciar">Reiniciar</button>
+      <div class="atajos atajo-div">
+      <div class="atajo"><span class="tecla">SPACE</span> Gíralo</div>
+      <div class="atajo"><span class="tecla">S</span> Ocultar el elemento seleccionado</div>
+      <div class="atajo"><span class="tecla">R</span> Reiniciar</div>
+      <div class="atajo"><span class="tecla">E</span> Editar</div>
+      <div class="atajo"><span class="tecla">F</span> Pantalla completa</div>
+    </div>
+    </div>
+  </div>
+  <script src="script1.js"></script>
+</body>
+</html>
